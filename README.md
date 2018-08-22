@@ -1,5 +1,5 @@
 # GCDTimer-demo
-A timer implementation that uses dispatch_source_t(GCD)
+A timer implementation that uses dispatch_source_t(GCD)，API is just like NSTimer.
 
 ####  为什么要封装GCDTimer
  NSTimer、CADisplayLink的一些众所周知的不便
