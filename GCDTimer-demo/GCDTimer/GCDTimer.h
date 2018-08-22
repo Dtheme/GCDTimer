@@ -51,7 +51,7 @@ typedef void(^timerAction)(dispatch_source_t timer);
 
 
 /**
- 定时器 启动、暂停(线程挂起)、取消调度源
+ 定时器 启动、暂停(挂起)、取消调度源
  */
 - (void)resume;
 - (void)pause;

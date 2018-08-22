@@ -108,8 +108,7 @@
 				96A88A6E212D3EB80061F9DB /* AppDelegate.m */,
 				96A88A70212D3EB80061F9DB /* ViewController.h */,
 				96A88A71212D3EB80061F9DB /* ViewController.m */,
-				96A88A9F212D3EC90061F9DB /* GCDTimer.h */,
-				96A88AA0212D3EC90061F9DB /* GCDTimer.m */,
+				96DBDC5D212D5CA0006E6516 /* GCDTimer */,
 				96A88A73212D3EB80061F9DB /* Main.storyboard */,
 				96A88A76212D3EBA0061F9DB /* Assets.xcassets */,
 				96A88A78212D3EBA0061F9DB /* LaunchScreen.storyboard */,
@@ -135,6 +134,15 @@
 				96A88A93212D3EBA0061F9DB /* Info.plist */,
 			);
 			path = "GCDTimer-demoUITests";
+			sourceTree = "<group>";
+		};
+		96DBDC5D212D5CA0006E6516 /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				96A88A9F212D3EC90061F9DB /* GCDTimer.h */,
+				96A88AA0212D3EC90061F9DB /* GCDTimer.m */,
+			);
+			path = GCDTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

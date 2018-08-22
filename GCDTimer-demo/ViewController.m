@@ -17,9 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.timer = [[GCDTimer alloc]initWithTimerInterval:1 leeway:0 queue:nil repeats:YES block:^(dispatch_source_t timer) {
+//    self.timer = [GCDTimer scheduledTimerWithTimerInterval:1 repeats:YES block:^(dispatch_source_t timer) {
+//        NSLog(@"Hello GCDTimer");
+//    }];
+
+    dispatch_queue_t queue = dispatch_queue_create("timerQueue", DISPATCH_QUEUE_CONCURRENT);
+    self.timer = [GCDTimer timerWithTimeInterval:1 leeway:0 queue:queue repeats:YES block:^(dispatch_source_t timer) {
         NSLog(@"Hello GCDTimer");
     }];
+    
+//    self.timer = [[GCDTimer alloc]initWithTimerInterval:1 leeway:0 queue:nil repeats:YES block:^(dispatch_source_t timer) {
+//        NSLog(@"Hello GCDTimer");
+//    }];
 }
 
 - (IBAction)resume:(UIButton *)sender {
