@@ -18,7 +18,7 @@ A timer implementation that uses dispatch_source_t(GCD)，API is just like NSTim
                 [strongSelf doSomething];
             }repeats:YES];
 ```
-如果你想要用好NSTimer或者想知道更多细节可以参考郭曜源大神开源的YYKit当中的对NSTimer的再封装[YYTimer](https://github.com/ibireme/YYKit/tree/3869686e0e560db0b27a7140188fad771e271508/YYKit/Utility)，不过，我在项目中使用GCD源定时器作为一般场景的定时器用作取代NSTimer的方案。
+如果你想要用好NSTimer或者想知道更多细节可以参考郭曜源大神开源的YYKit当中的对NSTimer的再封装[YYTimer](https://github.com/ibireme/YYKit/tree/3869686e0e560db0b27a7140188fad771e271508/YYKit/Utility)，不过，我在项目中是使用GCD源定时器作为一般场景的定时器来取代NSTimer。
 
 #### 使用
 由于是一个比较简单的工具类就没有引入cocoaPod，将demo中的`GCDTimer`类拖到你的工程中就可以使用。
