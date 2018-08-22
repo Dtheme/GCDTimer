@@ -15,6 +15,7 @@
 		96A88A7D212D3EBA0061F9DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A88A7C212D3EBA0061F9DB /* main.m */; };
 		96A88A87212D3EBA0061F9DB /* GCDTimer_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A88A86212D3EBA0061F9DB /* GCDTimer_demoTests.m */; };
 		96A88A92212D3EBA0061F9DB /* GCDTimer_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A88A91212D3EBA0061F9DB /* GCDTimer_demoUITests.m */; };
+		96A88AA1212D3ECA0061F9DB /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A88AA0212D3EC90061F9DB /* GCDTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		96A88A8D212D3EBA0061F9DB /* GCDTimer-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GCDTimer-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A88A91212D3EBA0061F9DB /* GCDTimer_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDTimer_demoUITests.m; sourceTree = "<group>"; };
 		96A88A93212D3EBA0061F9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A88A9F212D3EC90061F9DB /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		96A88AA0212D3EC90061F9DB /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				96A88A6E212D3EB80061F9DB /* AppDelegate.m */,
 				96A88A70212D3EB80061F9DB /* ViewController.h */,
 				96A88A71212D3EB80061F9DB /* ViewController.m */,
+				96A88A9F212D3EC90061F9DB /* GCDTimer.h */,
+				96A88AA0212D3EC90061F9DB /* GCDTimer.m */,
 				96A88A73212D3EB80061F9DB /* Main.storyboard */,
 				96A88A76212D3EBA0061F9DB /* Assets.xcassets */,
 				96A88A78212D3EBA0061F9DB /* LaunchScreen.storyboard */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A88AA1212D3ECA0061F9DB /* GCDTimer.m in Sources */,
 				96A88A72212D3EB80061F9DB /* ViewController.m in Sources */,
 				96A88A7D212D3EBA0061F9DB /* main.m in Sources */,
 				96A88A6F212D3EB80061F9DB /* AppDelegate.m in Sources */,

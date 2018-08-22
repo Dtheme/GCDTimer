@@ -7,18 +7,32 @@
 //
 
 #import "ViewController.h"
-
+#import "GCDTimer.h"
 @interface ViewController ()
-
+@property (nonatomic, strong) GCDTimer *timer;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.timer = [[GCDTimer alloc]initWithTimerInterval:1 leeway:0 queue:nil repeats:YES block:^(dispatch_source_t timer) {
+        NSLog(@"Hello GCDTimer");
+    }];
 }
 
+- (IBAction)resume:(UIButton *)sender {
+    [self.timer resume];
+}
+
+- (IBAction)pause:(UIButton *)sender {
+    [self.timer pause];
+}
+
+- (IBAction)cancel:(UIButton *)sender {
+    [self.timer cancel];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
