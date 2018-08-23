@@ -15,19 +15,19 @@
 
 @implementation GCDTimer
 
-+(instancetype)scheduledTimerWithTimerInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(timerAction)block{
++ (instancetype)scheduledTimerWithTimerInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(timerAction)block{
     
     return [GCDTimer timerWithTimeInterval:timeInterval leeway:0 queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) repeats:repeats block:block];
 }
 
-+(instancetype)timerWithTimeInterval:(NSTimeInterval)timeInterval leeway:(float)leeway queue:(dispatch_queue_t)queue repeats:(BOOL)repeats block:(timerAction)block{
++ (instancetype)timerWithTimeInterval:(NSTimeInterval)timeInterval leeway:(float)leeway queue:(dispatch_queue_t)queue repeats:(BOOL)repeats block:(timerAction)block{
     
     GCDTimer *timer = [[GCDTimer alloc]initWithTimerInterval:timeInterval leeway:leeway queue:queue repeats:repeats block:block];
     [timer resume];
     return timer;
 }
 
--(instancetype)initWithTimerInterval:(NSTimeInterval)timeInterval leeway:(float)leeway queue:(dispatch_queue_t)queue repeats:(BOOL)repeats block:(timerAction)block{
+- (instancetype)initWithTimerInterval:(NSTimeInterval)timeInterval leeway:(float)leeway queue:(dispatch_queue_t)queue repeats:(BOOL)repeats block:(timerAction)block{
     if (self = [super init]) {
         
         self.timeInterval = timeInterval;
@@ -35,7 +35,7 @@
         self.ac = block;
         
         dispatch_queue_t timerQueue = queue?(queue):(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-    
+        
         self.timer =  dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, timerQueue);
         dispatch_source_set_timer(self.timer, DISPATCH_TIME_NOW, self.timeInterval * NSEC_PER_SEC, leeway * NSEC_PER_SEC);
         dispatch_source_set_event_handler(self.timer, ^{
@@ -60,7 +60,7 @@
     }
 }
 
--(void)pause{
+- (void)pause{
     dispatch_suspend(self.timer);
 }
 
