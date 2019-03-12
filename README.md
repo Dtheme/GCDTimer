@@ -2,7 +2,7 @@
 A timer implementation that uses dispatch_source_t(GCD)，API is just like NSTimer.
 
 ####  为什么要封装GCDTimer
- NSTimer、CADisplayLink的一些众所周知的不便
+ NSTimer一些众所周知的不便
 - 在常用场景下对self强引用，引起的循环引用
 - 由于Runloop在任务繁重时所引起的timer时间不准
 
