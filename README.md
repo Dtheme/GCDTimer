@@ -22,7 +22,24 @@ A timer implementation that uses dispatch_source_t(GCD)，API is just like NSTim
 ```
 当然，上面方案有好有坏，欢迎讨论，我在项目中是使用GCD源定时器作为一般场景的定时器来取代NSTimer使用。本工程是对GCD信号源定时器的封装。当然，郭曜源大神在他开源的YYKit当中的封装了一个更加线程安全的版本[YYTimer](https://github.com/ibireme/YYKit/tree/3869686e0e560db0b27a7140188fad771e271508/YYKit/Utility）
 
+
+
+另外，官方并非没有注意到这个事情，在iOS 10以后，NSTimer的API中出现了下面这个方法，看一下注释就很清楚，它已经处理了造成循环引用的问题。所以推荐使用这个方法。
+
+```objective-c
+/// Creates and returns a new NSTimer object initialized with the specified block object. This timer needs to be scheduled on a run loop (via -[NSRunLoop addTimer:]) before it will fire.
+/// - parameter:  timeInterval  The number of seconds between firings of the timer. If seconds is less than or equal to 0.0, this method chooses the nonnegative value of 0.1 milliseconds instead
+/// - parameter:  repeats  If YES, the timer will repeatedly reschedule itself until invalidated. If NO, the timer will be invalidated after it fires.
+/// - parameter:  block  The execution body of the timer; the timer itself is passed as the parameter to this block when executed to aid in avoiding cyclical references
++ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+```
+
+
+
+
+
 #### 使用
+
 将demo中的`GCDTimer`类拖到你的工程中就可以使用。
 GCDTimer的接口是模仿NSTimer的设计的，分别提供了2个类方法1个实例方法。
 
